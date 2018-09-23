@@ -1,6 +1,5 @@
 package net.yuanma.control;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,7 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/userInfo",method=RequestMethod.POST)
 	@ResponseBody
-	public UserInfoDto getUserInfo(@RequestParam("id")int id,HttpServletRequest request){
+	public UserInfoDto getUserInfo(@RequestParam("id")int id){
 		UserInfoDto findUserInfo = loginService.findUserInfo(id);
 		return findUserInfo;
 	}
